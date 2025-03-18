@@ -19,11 +19,26 @@ function agregarAmigo(){
     listaAmigos.push(nombreAmigo)
 
 
-    console.log(nombreAmigo)
-    console.log(listaAmigos)
-
+    //finalmente se reinicia el valor de la caja de texto y la variable nombreAmigo
     cajaDeTexto.value = '';
     nombreAmigo= '';
+    //se actualiza la lista 
+    actualizarLista();
+}
 
-    console.log(nombreAmigo);
+function actualizarLista(){
+
+     let listaHTML = document.getElementById("listaAmigos");
+     listaHTML.innerHTML = ""
+    
+     for(i=0; i < listaAmigos.length; i++){
+        let li = document.createElement("li");
+        li.textContent = ` ${i+1} -  ${listaAmigos[i]}`  ;
+        listaHTML.appendChild(li);
+     }
+
+}
+
+function sortearAmigo(){
+    
 }
